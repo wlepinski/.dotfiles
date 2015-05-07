@@ -5,8 +5,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 . $(brew --prefix)/etc/profile.d/z.sh
 
 # Aliases
-alias mongod="mongod --config /usr/local/etc/mongod.conf"
-alias c="clear"
+alias cls="clear"
 alias reload="source ~/.bash_profile"
 
 # Enabling bash completion
@@ -15,13 +14,11 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 # Patching PHP
-export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
-
-# NVM
-# This loads nvm
-export NVM_DIR="/Users/williaml/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" 
+# export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
 
 # RVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 # Load RVM into a shell session *as a function*export PATH="/usr/local/bin:$PATH"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
